@@ -50,7 +50,7 @@ public class Functions {
     }
 
     private GameScore scoreLevel(Answers answers) {
-        log.debug("Answers counter in Level 3: {}", answers.counter());
+        log.debug("Answers counter: {}", answers.counter());
         int points = answers.counter() > 1 ? answers.counter() : -1;
         return new GameScore(answers.player(), answers.sessionId(), LocalDateTime.now(), environment.getProperty("spring.application.name"), points);
     }
