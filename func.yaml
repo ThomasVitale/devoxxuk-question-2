@@ -7,9 +7,9 @@ image: ghcr.io/thomasvitale/devoxxuk-question-2:latest
 imageDigest: sha256:6b1ff1a87062fc76b4d93141f07e79ef32bc8f4b1fd9054b49506062cfb0468e
 build: local
 git: {}
-builder: gcr.io/paketo-buildpacks/builder:base
+builder: gcr.io/paketo-buildpacks/builder:tiny
 builders:
-  default: gcr.io/paketo-buildpacks/builder:base
+  default: gcr.io/paketo-buildpacks/builder:tiny
 buildpacks: []
 volumes: []
 buildEnvs:
@@ -18,8 +18,10 @@ buildEnvs:
 - name: BP_JVM_VERSION
   value: "17"
 envs:
-- name: SPRING_REDIS_HOST
-  value: ""
+  - name: SPRING_REDIS_HOST
+    value: ""
+  - name: SPRING_REDIS_PASSWORD
+    value: ""
 annotations: {}
 options: {}
 labels: []
